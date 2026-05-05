@@ -37,10 +37,13 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // ── Auth ──────────────────────────────────────────────────────────────
     Route::prefix('auth')->group(function () {
-        Route::get('/profile',     [AuthController::class, 'profile']);
-        Route::put('/profile',     [AuthController::class, 'updateProfile']);
-        Route::post('/logout',     [AuthController::class, 'logout']);
-        Route::post('/logout-all', [AuthController::class, 'logoutAll']);
+        Route::get('/profile',          [AuthController::class, 'profile']);
+        Route::put('/profile',          [AuthController::class, 'updateProfile']);
+        Route::post('/logout',          [AuthController::class, 'logout']);
+        Route::post('/logout-all',      [AuthController::class, 'logoutAll']);
+        // Perfil de hábitos (Plan de Prevención)
+        Route::get('/perfil-habitos',   [AuthController::class, 'getHabitos']);
+        Route::put('/perfil-habitos',   [AuthController::class, 'guardarHabitos']);
     });
 
     // ── Escaneos ──────────────────────────────────────────────────────────

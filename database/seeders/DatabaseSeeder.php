@@ -11,11 +11,12 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RolSeeder::class,
             EstatusSeeder::class,
-            UserSeeder::class,
+            UserSeeder::class,           // 6 usuarios con hábitos variados + mascotas
             CategoriaResiduoSeeder::class,
             CentroDestinoSeeder::class,
             BadgeSeeder::class,
             RetoComunidadSeeder::class,
+            EscaneoSeeder::class,        // historial de escaneos por usuario
         ]);
     }
 }

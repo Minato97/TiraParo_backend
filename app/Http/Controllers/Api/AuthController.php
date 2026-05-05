@@ -122,4 +122,40 @@ class AuthController extends Controller
 
         return response()->json(['message' => 'Sesión cerrada en todos los dispositivos.']);
     }
+
+    // ─────────────────────────────────────────────────────────────────────
+    // PERFIL DE HÁBITOS
+    // Guarda el cuestionario de hábitos del usuario (onboarding de prevención).
+    // La lógica de mensajes motivacionales vive en la app iOS —
+    // el backend solo persiste el JSON para recuperarlo en otro dispositivo.
+    // ─────────────────────────────────────────────────────────────────────
+
+    public function guardarHabitos(Request $request)
+    {
+        $data = $request->validate([
+            'habitos_perfil'                    => 'required|array',
+            'habitos_perfil.dieta'              => 'required|in:omnivoro,vegetariano,vegano,flexitariano',
+            'habitos_perfil.frecuencia_cocina'  => 'required|in:diario,semanal,pocas,nunca',
+            'habitos_perfil.bebidas_envase'     => 'required|in:mucho,regular,poco,nada',
+            'habitos_perfil.habito_compras'     => 'required|in:mercado,supermercado,tiendita,delivery',
+            'habitos_perfil.residuos_ropa'      => 'required|in:seguido,ocasional,nunca,reutiliza',
+            'habitos_perfil.papel_carton'       => 'required|in:bastante,regular,poco,nada',
+        ]);
+
+        $request->user()->update([
+            'habitos_perfil' => $data['habitos_perfil'],
+        ]);
+
+        return response()->json([
+            'ok'             => true,
+            'habitos_perfil' => $request->user()->fresh()->habitos_perfil,
+        ]);
+    }
+
+    public function getHabitos(Request $request)
+    {
+        return response()->json([
+            'habitos_perfil' => $request->user()->habitos_perfil,
+        ]);
+    }
 }

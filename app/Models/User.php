@@ -29,6 +29,7 @@ class User extends Authenticatable
         'co2_evitado_kg',
         'agua_ahorrada_litros',
         'arboles_equivalentes',
+        'habitos_perfil',
     ];
 
     protected $hidden = [
@@ -39,11 +40,12 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'email_verified_at' => 'datetime',
-            'password'          => 'hashed',
-            'co2_evitado_kg'    => 'float',
+            'email_verified_at'    => 'datetime',
+            'password'             => 'hashed',
+            'co2_evitado_kg'       => 'float',
             'agua_ahorrada_litros' => 'float',
             'arboles_equivalentes' => 'float',
+            'habitos_perfil'       => 'array',   // JSON ↔ array automático
         ];
     }
 
