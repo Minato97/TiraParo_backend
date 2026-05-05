@@ -1,0 +1,220 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\CentroDestino;
+use Illuminate\Database\Seeder;
+
+class CentroDestinoSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $centros = [
+            // ── RECICLAJE ──────────────────────────────────────────────────
+            [
+                'nombre'               => 'Punto Verde Condesa',
+                'tipo'                 => 'reciclaje',
+                'descripcion'          => 'Centro de acopio municipal de la Alcaldía Cuauhtémoc',
+                'direccion'            => 'Av. Ámsterdam 317, Col. Condesa',
+                'latitud'              => 19.4114,
+                'longitud'             => -99.1762,
+                'alcaldia'             => 'Cuauhtémoc',
+                'colonia'              => 'Condesa',
+                'horario'              => 'Lun–Vie 9:00–18:00, Sáb 9:00–14:00',
+                'telefono'             => '55 5658 1111',
+                'materiales_aceptados' => ['plastic', 'glass', 'metal', 'cardboard', 'paper'],
+            ],
+            [
+                'nombre'               => 'Centro de Acopio Roma Norte',
+                'tipo'                 => 'reciclaje',
+                'descripcion'          => 'Punto de reciclaje con atención a pepenadores certificados',
+                'direccion'            => 'Orizaba 101, Col. Roma Norte',
+                'latitud'              => 19.4178,
+                'longitud'             => -99.1603,
+                'alcaldia'             => 'Cuauhtémoc',
+                'colonia'              => 'Roma Norte',
+                'horario'              => 'Lun–Sáb 8:00–17:00',
+                'telefono'             => '55 5511 2233',
+                'materiales_aceptados' => ['plastic', 'glass', 'metal', 'cardboard', 'paper', 'textile'],
+            ],
+            [
+                'nombre'               => 'Punto Verde Polanco',
+                'tipo'                 => 'reciclaje',
+                'descripcion'          => 'Módulo de reciclaje Miguel Hidalgo',
+                'direccion'            => 'Ejército Nacional 769, Polanco',
+                'latitud'              => 19.4348,
+                'longitud'             => -99.2046,
+                'alcaldia'             => 'Miguel Hidalgo',
+                'colonia'              => 'Polanco',
+                'horario'              => 'Lun–Vie 9:00–17:00',
+                'telefono'             => '55 5622 4400',
+                'materiales_aceptados' => ['plastic', 'glass', 'metal', 'cardboard', 'paper'],
+            ],
+            [
+                'nombre'               => 'Centro de Reciclaje Coyoacán',
+                'tipo'                 => 'reciclaje',
+                'descripcion'          => 'Centro de valorización de residuos Coyoacán',
+                'direccion'            => 'Miguel Ángel de Quevedo 677, Coyoacán',
+                'latitud'              => 19.3476,
+                'longitud'             => -99.1660,
+                'alcaldia'             => 'Coyoacán',
+                'colonia'              => 'Del Valle',
+                'horario'              => 'Lun–Sáb 9:00–18:00',
+                'telefono'             => '55 5658 0600',
+                'materiales_aceptados' => ['plastic', 'glass', 'metal', 'cardboard', 'paper', 'textile', 'trash'],
+            ],
+            [
+                'nombre'               => 'Punto Verde Xochimilco',
+                'tipo'                 => 'reciclaje',
+                'descripcion'          => 'Módulo de acopio Alcaldía Xochimilco',
+                'direccion'            => 'Prol. División del Norte s/n, Xochimilco',
+                'latitud'              => 19.2571,
+                'longitud'             => -99.1002,
+                'alcaldia'             => 'Xochimilco',
+                'colonia'              => 'Xochimilco Centro',
+                'horario'              => 'Mar–Dom 8:00–16:00',
+                'telefono'             => '55 5676 0800',
+                'materiales_aceptados' => ['plastic', 'glass', 'metal', 'cardboard', 'paper'],
+            ],
+            [
+                'nombre'               => 'Ecocentro Benito Juárez',
+                'tipo'                 => 'reciclaje',
+                'descripcion'          => 'Centro de reciclaje y valorización de residuos BJ',
+                'direccion'            => 'Av. Insurgentes Sur 800, Del Valle',
+                'latitud'              => 19.3778,
+                'longitud'             => -99.1579,
+                'alcaldia'             => 'Benito Juárez',
+                'colonia'              => 'Del Valle Centro',
+                'horario'              => 'Lun–Vie 8:00–18:00, Sáb 9:00–14:00',
+                'telefono'             => '55 5687 7000',
+                'materiales_aceptados' => ['plastic', 'glass', 'metal', 'cardboard', 'paper', 'textile'],
+            ],
+
+            // ── DONACIÓN DE ALIMENTOS ──────────────────────────────────────
+            [
+                'nombre'               => 'Banco de Alimentos de México BAMX – CDMX',
+                'tipo'                 => 'donacion',
+                'descripcion'          => 'Principal banco de alimentos de México, acepta alimentos no perecederos y en buen estado',
+                'direccion'            => 'Av. Pacífico 238, Col. Del Valle',
+                'latitud'              => 19.3812,
+                'longitud'             => -99.1601,
+                'alcaldia'             => 'Benito Juárez',
+                'colonia'              => 'Del Valle',
+                'horario'              => 'Lun–Vie 8:00–17:00',
+                'telefono'             => '55 5669 7700',
+                'sitio_web'            => 'https://www.bamx.org.mx',
+                'materiales_aceptados' => ['food_organics'],
+            ],
+            [
+                'nombre'               => 'Comedor Comunitario Tepito',
+                'tipo'                 => 'donacion',
+                'descripcion'          => 'Comedor comunitario que acepta donaciones de alimentos frescos en buen estado',
+                'direccion'            => 'Aztecas 45, Col. Tepito',
+                'latitud'              => 19.4451,
+                'longitud'             => -99.1315,
+                'alcaldia'             => 'Cuauhtémoc',
+                'colonia'              => 'Tepito',
+                'horario'              => 'Todos los días 7:00–14:00',
+                'materiales_aceptados' => ['food_organics'],
+            ],
+            [
+                'nombre'               => 'Albergue Casa Taller Iztapalapa',
+                'tipo'                 => 'donacion',
+                'descripcion'          => 'Centro de apoyo social que recibe alimentos y ropa',
+                'direccion'            => 'Av. Ermita Iztapalapa 1630, Iztapalapa',
+                'latitud'              => 19.3632,
+                'longitud'             => -99.0540,
+                'alcaldia'             => 'Iztapalapa',
+                'colonia'              => 'Iztapalapa',
+                'horario'              => 'Lun–Vie 9:00–16:00',
+                'telefono'             => '55 5694 0011',
+                'materiales_aceptados' => ['food_organics', 'textile'],
+            ],
+
+            // ── COMPOSTA ──────────────────────────────────────────────────
+            [
+                'nombre'               => 'Mercado de Medellín – Módulo Orgánicos',
+                'tipo'                 => 'composta',
+                'descripcion'          => 'Mercado que recibe residuos orgánicos para composta municipal',
+                'direccion'            => 'Campeche 101, Col. Roma Sur',
+                'latitud'              => 19.4059,
+                'longitud'             => -99.1659,
+                'alcaldia'             => 'Cuauhtémoc',
+                'colonia'              => 'Roma Sur',
+                'horario'              => 'Lun–Sáb 7:00–15:00',
+                'materiales_aceptados' => ['food_organics', 'vegetation'],
+            ],
+            [
+                'nombre'               => 'Centro de Composta Chapultepec',
+                'tipo'                 => 'composta',
+                'descripcion'          => 'Centro de composta municipal del Bosque de Chapultepec',
+                'direccion'            => 'Bosque de Chapultepec, 1a Sección',
+                'latitud'              => 19.4241,
+                'longitud'             => -99.1960,
+                'alcaldia'             => 'Miguel Hidalgo',
+                'colonia'              => 'Bosque de Chapultepec',
+                'horario'              => 'Mar–Dom 8:00–17:00',
+                'materiales_aceptados' => ['food_organics', 'vegetation'],
+            ],
+            [
+                'nombre'               => 'Jardín de Xochimilco – Composta Comunitaria',
+                'tipo'                 => 'composta',
+                'descripcion'          => 'Punto de composta impulsado por la Alcaldía Xochimilco para residuos verdes',
+                'direccion'            => 'Av. Guadalupe I. Ramírez s/n, Xochimilco',
+                'latitud'              => 19.2645,
+                'longitud'             => -99.0958,
+                'alcaldia'             => 'Xochimilco',
+                'colonia'              => 'San Gregorio Atlapulco',
+                'horario'              => 'Sáb y Dom 9:00–14:00',
+                'materiales_aceptados' => ['vegetation', 'food_organics'],
+            ],
+
+            // ── REUTILIZACIÓN ──────────────────────────────────────────────
+            [
+                'nombre'               => 'Mercado del Chopo',
+                'tipo'                 => 'reutilizacion',
+                'descripcion'          => 'Mercado de intercambio y segunda mano, especialmente ropa y objetos vintage',
+                'direccion'            => 'Aldama 43, Col. Santa María la Ribera',
+                'latitud'              => 19.4441,
+                'longitud'             => -99.1575,
+                'alcaldia'             => 'Cuauhtémoc',
+                'colonia'              => 'Santa María la Ribera',
+                'horario'              => 'Sábados 10:00–17:00',
+                'sitio_web'            => 'https://mercadodelchopo.com',
+                'materiales_aceptados' => ['textile', 'trash'],
+            ],
+            [
+                'nombre'               => 'Tianguis Cultural del Sur',
+                'tipo'                 => 'reutilizacion',
+                'descripcion'          => 'Tianguis de segunda mano y trueque en el sur de CDMX',
+                'direccion'            => 'Av. Universidad 1900, Coyoacán',
+                'latitud'              => 19.3524,
+                'longitud'             => -99.1701,
+                'alcaldia'             => 'Coyoacán',
+                'colonia'              => 'Copilco Universidad',
+                'horario'              => 'Domingos 10:00–17:00',
+                'materiales_aceptados' => ['textile', 'trash'],
+            ],
+            [
+                'nombre'               => 'Reciclatón SEDEMA',
+                'tipo'                 => 'reutilizacion',
+                'descripcion'          => 'Programa permanente de la SEDEMA para acopio de electrónicos, ropa y materiales mixtos',
+                'direccion'            => 'Av. Insurgentes Norte 1721, Gustavo A. Madero',
+                'latitud'              => 19.4897,
+                'longitud'             => -99.1274,
+                'alcaldia'             => 'Gustavo A. Madero',
+                'colonia'              => 'Lindavista',
+                'horario'              => 'Lun–Vie 9:00–17:00',
+                'sitio_web'            => 'https://www.sedema.cdmx.gob.mx',
+                'materiales_aceptados' => ['textile', 'trash', 'metal', 'plastic'],
+            ],
+        ];
+
+        foreach ($centros as $centro) {
+            CentroDestino::updateOrCreate(
+                ['nombre' => $centro['nombre'], 'alcaldia' => $centro['alcaldia']],
+                $centro
+            );
+        }
+    }
+}
